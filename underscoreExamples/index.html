@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>underscore.js examples</title>
+    </head>
+    <body>
+        <div id="examplesDiv">
+            
+        </div>
+    
+        <script type="text/javascript" src="underscore-min.js"></script>
+        <script type="text/javascript" src="examples.js"></script>
+        <script type="text/javascript">
+            function runExample(example) {
+                var code = examples[example];
+                
+                console.clear();
+                code();
+            }
+            
+            // generate example buttons
+            var examplesDiv = document.getElementById("examplesDiv");
+            for(var i in examples) {
+                var example = examples[i];
+                
+                examplesDiv.innerHTML += '<button onclick="runExample('+i+')">'+i+'</button>';
+            }
+            
+        </script>
+    </body>
+</html>
