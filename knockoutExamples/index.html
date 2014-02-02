@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>knockout.js examples</title>
+    </head>
+    <body>
+        
+        <h1>Hallo, <span data-bind="text: name"></span> hier sind <span data-bind="text: itemsCount"></span> Items</h1>
+        <h2 data-bind="visible: itemsCount() > 10">Wow! So viele!</h2>
+        
+        <label>Name</label>
+        <input type="text" data-bind="value: name, valueUpdate:'afterkeydown'" />
+        
+        <br><br>
+        
+        <button data-bind="click: addItem">Add item</button>
+        <br><br><br><br>
+        <!-- ko if: selectedItem() -->
+        <div data-bind="text: selectedItem().name"></div>
+        <!-- /ko -->
+        <select data-bind="options: items,
+                           optionsText: 'number',
+                           value: selectedItem" ></select>
+    
+        <script type="text/javascript" src="knockout-3.0.0.js"></script>
+        <script type="text/javascript" src="example.js"></script>
+    </body>
+</html>
