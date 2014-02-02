@@ -1,0 +1,55 @@
+@exampleSize: 150px;
+@baseColor: red;
+
+.example-box() {
+    width: @exampleSize;
+    height: @exampleSize;
+}
+
+.example-box-colorful(@color) {
+    .example-box();
+    background-color: @color;
+}
+
+
+
+.innerBoxSize(){
+    width: @exampleSize / 2;
+    height: @exampleSize / 2;
+}
+
+.innerBox(@outerColor) when (lightness(@outerColor) >= 50%){
+    .innerBoxSize();
+    background-color: black;
+}
+
+.innerBox(@outerColor) when (lightness(@outerColor) < 50%){
+    .innerBoxSize();
+    background-color: white;
+}
+
+#box1 {
+    @box1Color: darken(@baseColor, 25);
+    .example-box-colorful(@box1Color);
+    
+    .inner {
+        .innerBox(@box1Color);
+    }
+}
+
+#box2 {
+    .example-box-colorful(@baseColor);
+    
+    .inner {
+        .innerBox(@baseColor);
+    }
+}
+
+#box3 {
+    @box3Color: lighten(@baseColor, 25);
+    .example-box-colorful(@box3Color);
+    
+    .inner {
+        .innerBox(@box3Color);
+    }
+}

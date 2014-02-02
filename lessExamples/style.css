@@ -1,0 +1,30 @@
+#box1 {
+  width: 150px;
+  height: 150px;
+  background-color: #800000;
+}
+#box1 .inner {
+  width: 75px;
+  height: 75px;
+  background-color: white;
+}
+#box2 {
+  width: 150px;
+  height: 150px;
+  background-color: #ff0000;
+}
+#box2 .inner {
+  width: 75px;
+  height: 75px;
+  background-color: black;
+}
+#box3 {
+  width: 150px;
+  height: 150px;
+  background-color: #ff8080;
+}
+#box3 .inner {
+  width: 75px;
+  height: 75px;
+  background-color: black;
+}
