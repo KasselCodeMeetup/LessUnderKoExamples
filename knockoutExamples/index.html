@@ -13,14 +13,21 @@
         
         <br><br>
         
-        <button data-bind="click: addItem">Add item</button>
-        <br><br><br><br>
-        <!-- ko if: selectedItem() -->
-        <div data-bind="text: selectedItem().name"></div>
-        <!-- /ko -->
         <select data-bind="options: items,
-                           optionsText: 'number',
+                           optionsText: function(i) { return i.name},
                            value: selectedItem" ></select>
+        <button data-bind="click: addItem">Add item</button>
+        
+        <br><br>
+        
+        <label>Name</label>
+        <input type="text" data-bind="value: selectedItem().name, valueUpdate:'afterkeydown'" />
+        <br>
+        <label>Alter</label>
+        <input type="text" data-bind="value: selectedItem().age" />
+        <br>
+        <label>Job</label>
+        <input type="text" data-bind="value: selectedItem().job" />
     
         <script type="text/javascript" src="knockout-3.0.0.js"></script>
         <script type="text/javascript" src="example.js"></script>
